@@ -601,7 +601,7 @@ def _decorate(fn_or_cls, name, whitelist, blacklist):
         # If a file is executed using runpy.run_path(), the module name is
         # '<run_path>', which is not an acceptable name by gin.
         return gin.configurable(
-            orig_name, whitelist=whitelist, blacklist=blacklist)(fn_or_cls)
+            orig_name, allowlist=whitelist, denylist=blacklist)(fn_or_cls)
     else:
         return fn_or_cls
 
